@@ -1,0 +1,48 @@
+body {
+    display: grid;
+    place-items: center;
+  }
+  
+  .img-container {
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+  }
+  
+  .img-container::after {
+    content: "";
+    display: block;
+    padding-bottom: calc(900% / 16);
+  }
+  
+  .img-container > * {
+    position: absolute;
+    top: var(--offset, 0);
+    left: var(--offset, 0);
+    width: calc(100% - 2 * var(--offset, 0px));
+    height: calc(100% - 2 * var(--offset, 0px));
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  
+  .img-blur {
+    --blur: 20px;
+    --offset: calc(-1 * var(--blur));
+    -o-object-fit: cover;
+       object-fit: cover;
+    -webkit-filter: blur(var(--blur));
+            filter: blur(var(--blur));
+  }
+  
+  p {
+    text-align: center;
+    color: #666;
+    font-family: sans-serif;
+  }
+  p a {
+    color: #2073c5;
+  }
+  

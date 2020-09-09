@@ -1,0 +1,73 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #2b4162;
+	background-image: linear-gradient(315deg, #2b4162 0%, #12100e 74%);
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+		-webkit-tap-highlight-color: transparent;
+}
+
+button {
+	width: 150px;
+	height: 50px;
+	cursor: pointer;
+	background: none;
+	border: 2px solid rgba(255,255,255,0.4);
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	transition: 500ms;
+}
+
+button:after {
+	content: 'Parallel';
+	position: absolute;
+	color: white;
+	transition: 500ms;
+}
+
+.bg {
+	width: 0px;
+	height: 50px;
+	content: '';
+	z-index: -1;
+	background: rgba(255,255,255,0.2);
+	transform: skewX(45deg);
+	transition: 500ms;
+}
+
+button:hover {
+	border: 2px solid rgba(255,255,255,0.8);
+}
+
+button:hover .bg {
+	background: rgba(255,255,255,0.8);
+	width: 100px;
+}
+
+button:hover:after {
+	color: black;
+}
+
+button:focus {
+	outline: none;
+}
